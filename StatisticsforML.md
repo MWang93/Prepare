@@ -35,7 +35,7 @@
 - test of independence is one of the most basic and common hypothesis tests in the statistical analysis of categorical data. given 2 categorical random variables X and Y, the chi-sqaure test of independence determines whether or not there exist a statistical dependence between tehm. chi2-contingency function is stats package uses the observed table and subsequently calculates its expected table, followed by calculating the p-value.
 
 #### 6. Curse of Dimension
-- the difficulty of searching through a solution space becomes much harder as you have more features.
+- the difficulty of searching through a solution space becomes much harder as you have more features, which means that everything is "far away" from each other.
 - two solutions: feature selection & feature extraction.
 - difference: feature selection keeps a subset of the original features while feature extraction creates brand new ones. 
 

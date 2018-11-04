@@ -52,10 +52,16 @@
 
 #### 8. Bias-Variance tradeoff
 - bias: how well the model fits the data
-        - low bias: close to the truth
+        - low bias: close to the truth.
+        - high bias: simple, have assumption, so miss important features of the data.
 - variance: how much the model changes based on changes in the input
-        - low variance: not overfit
+        - low variance: not overfit.
+        - high variance: flexible, capture intricate features of training data set, so easily overfit and vary a lot with the training set drawn.
 - simpler model: high bias, low variance. complex model: low bias, high variance.
+- example
+        - knn(k=1): low bias, high variance.
+        - knn(k large): high bias, low variance.
+        - linear regression: high bias, low variance.
 
 #### 9. Advantages and disadvantages of decision tree?
 - advantages: decision tree are easy to interpret, nonparametric(robust to outliers), relatively few parameters to tune.
@@ -66,4 +72,28 @@
 - disadvantages: require large training data to converge, also difficult to pick the right architecture and the interanl hidden layers are incomprehensible.
 
 #### 11. How can you choose a classifier based on training set size.
+
+#### 12. Confusion Matrix
+- sensitivity(recall): TPR = 1 - FNR
+- specificity: TNR = 1 - FPR
+- positive predictive value = 1 - false directory rate
+- negatvie predictive value = 1- false omission rate
+
+#### 13. What's ROC and AUC
+- roc: performance plot for binary classifier of TPR vs FPR.
+        - (0,0): cutoff = 1
+        - (1,1): cutoff = 0 
+        - (0,1): perfect classification, sensitivity = 1 and specificity = 1
+- auc: area udner the roc curve
+
+#### 14. Why AUROC is better tahn raw accuracy as an out-of-sample evalutaion metrics?
+- auc is robust to class imbalance, unlike raw accuracy.
+
+#### 15. Error I and Error II
+- error I & false positive rate: predict a man is pregnant.
+- error II & false negative rate: predict a pregnant woman is not pregnant.
  
+#### 16. The cost of false positive is higher than false negative as well as the other way?
+- large false positive cost: recruiting process, cost of hiring a bad candidate is much higher than passing a good one.
+- large false negative cost: cancer prediction, predicting a cancer patient is healthy means this person cannot get proper treatement in time.
+- note: minimizing the cost of false positive/negative is a machine learning problem as much as a product problem.

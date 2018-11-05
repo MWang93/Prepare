@@ -41,27 +41,27 @@
 
 #### [7. Feature selection vs Feature extraction](https://elitedatascience.com/dimensionality-reduction-algorithms)
 - feature selection
-        - varaince thresholds: remove features whose values don't change much from observation to observation, which provide little values.
-        - correlation thresholds: remove features that are highly correlated with others, which provide redundant information.
-        - genetic algorithms (GA): they're search algorithms, having two main uses in machine learning: optimization (finding the best weights for a neural network), supervised features selection (genes represent individual feature and the organism represents a candidate set of features)
-        - honorable mension: stepwise search: supervised feature selection based on sequential search, it has 2 features: forward and backward.
+    - varaince thresholds: remove features whose values don't change much from observation to observation, which provide little values.
+    - correlation thresholds: remove features that are highly correlated with others, which provide redundant information.
+    - genetic algorithms (GA): they're search algorithms, having two main uses in machine learning: optimization (finding the best weights for a neural network), supervised features selection (genes represent individual feature and the organism represents a candidate set of features)
+    - honorable mension: stepwise search: supervised feature selection based on sequential search, it has 2 features: forward and backward.
 - feature extraction
-        - PCA: a unsupervised algorithm that creates linear combination of the original features, the new features are orthogonal, which means that they are uncorrelated. Futhermore, they are ranked in order of their "explained variance".
-        - LDA: a supervised algorithm that also creates linear combination of your original features. However, unlike PCA, LDA doesn't maximize explained variance, it maximizes the separabiity between classes. 
-        - Autoencoders: neural networks that are trained to reconstruct their original inputs.
+    - [PCA](https://www.coursera.org/lecture/machine-learning/principal-component-analysis-algorithm-ZYIPa): a unsupervised algorithm that creates linear combination of the original features, the new features are orthogonal, which means that they are uncorrelated. Futhermore, they are ranked in order of their "explained variance".
+    - LDA: a supervised algorithm that also creates linear combination of your original features. However, unlike PCA, LDA doesn't maximize explained variance, it maximizes the separabiity between classes. 
+    - Autoencoders: neural networks that are trained to reconstruct their original inputs.
 
 #### 8. Bias-Variance tradeoff
 - bias: how well the model fits the data
-        - low bias: close to the truth.
-        - high bias: simple, have assumption, so miss important features of the data.
+    - low bias: close to the truth.
+    - high bias: simple, have assumption, so miss important features of the data.
 - variance: how much the model changes based on changes in the input
-        - low variance: not overfit.
-        - high variance: flexible, capture intricate features of training data set, so easily overfit and vary a lot with the training set drawn.
+    - low variance: not overfit.
+    - high variance: flexible, capture intricate features of training data set, so easily overfit and vary a lot with the training set drawn.
 - simpler model: high bias, low variance. complex model: low bias, high variance.
 - example
-        - knn(k=1): low bias, high variance.
-        - knn(k large): high bias, low variance.
-        - linear regression: high bias, low variance.
+    - knn(k=1): low bias, high variance.
+    - knn(k large): high bias, low variance.
+    - linear regression: high bias, low variance.
 
 #### 9. Advantages and disadvantages of decision tree?
 - advantages: decision tree are easy to interpret, nonparametric(robust to outliers), relatively few parameters to tune.
@@ -81,9 +81,9 @@
 
 #### 13. What's ROC and AUC
 - roc: performance plot for binary classifier of TPR vs FPR.
-        - (0,0): cutoff = 1
-        - (1,1): cutoff = 0 
-        - (0,1): perfect classification, sensitivity = 1 and specificity = 1
+    - (0,0): cutoff = 1
+    - (1,1): cutoff = 0 
+    - (0,1): perfect classification, sensitivity = 1 and specificity = 1
 - auc: area udner the roc curve
 
 #### 14. Why AUROC is better tahn raw accuracy as an out-of-sample evalutaion metrics?
@@ -97,3 +97,7 @@
 - large false positive cost: recruiting process, cost of hiring a bad candidate is much higher than passing a good one.
 - large false negative cost: cancer prediction, predicting a cancer patient is healthy means this person cannot get proper treatement in time.
 - note: minimizing the cost of false positive/negative is a machine learning problem as much as a product problem.
+
+#### 17. Variables?
+- nominal, dichotomous, ordinal
+- interval, ratio

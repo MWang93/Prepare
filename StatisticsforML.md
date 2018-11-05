@@ -90,8 +90,9 @@
 - auc is robust to class imbalance, unlike raw accuracy.
 
 #### 15. Error I and Error II
-- error I & false positive rate: predict a man is pregnant.
-- error II & false negative rate: predict a pregnant woman is not pregnant.
+- error I & false positive rate: predict a man is pregnant, falsely infer the existence of something that is not there.
+- error II & false negative rate: predict a pregnant woman is not pregnant, falsely infer the absence of something that is.
+- statistical hypothesis testing, a type I error is the incorrect rejection of a true null hypotheis, while type II error is incorrectly retaining a false null hypothesis. 
  
 #### 16. The cost of false positive is higher than false negative as well as the other way?
 - large false positive cost: recruiting process, cost of hiring a bad candidate is much higher than passing a good one.
@@ -109,10 +110,24 @@
 #### 20. Evaluation Metrics for Classification Model
 - confustion matrix: 
     - sensitivity, specificity and detection rate. 
-    - precision, recall and f1 score   
+    - precision, recall and f1 score 
+- [log loss](https://datawookie.netlify.com/blog/2015/12/making-sense-of-logarithmic-loss/): accuracy of a classifier by penalising false classifications, heavily penalises classifiers that are confident about an incorrect classification. For example, if for a particular observation, the classifier assigns a very small probability to the correct class then the corresponding contribution to the Log Loss will be very large indeed. 
 - kappa: similar to Accuracy score, but it takes into account the accuracy that would have happened anyway through random predictions.
 - ks statistic
 - roc & auc
 - concordance and discordance
 - somers-d statistic
 - gini coefficient: an indicator of how well the model outperforms random predictions. It can be computed from the area under the ROC curve using the following formula: Gini Coefficient = (2 * AUROC) - 1
+
+#### 21. CBOW and Skip gram model
+In CBOW the vectors from the context words are averaged before predicting the center word. In skip-gram there is no averaging of embedding vectors. It seems like the model can learn better representations for the rare words when their vectors are not averaged with the other context words in the process of making the predictions.
+
+#### 22. ReLu, tanh, SIGMOID
+
+#### 23. [PCA, t-SNE difference](https://www.biostars.org/p/295174/)
+The main difference between t-SNE (or other manifold learning methods) and PCA is that t-SNE tries to deconvolute relationships between neighbors in high-dimensional data.
+
+#### 24. Multi-Collinear features
+
+# Some Resouces: 
+https://www.analyticsvidhya.com/blog/2017/04/40-questions-test-data-scientist-machine-learning-solution-skillpower-machine-learning-datafest-2017/

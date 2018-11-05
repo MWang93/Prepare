@@ -129,5 +129,10 @@ The main difference between t-SNE (or other manifold learning methods) and PCA i
 
 #### 24. Multi-Collinear features
 
+#### 25. PCA and SVD
+PCA (principal component analysis) is a method of extracting important variables (in form of components) from a large set of variables available in a data set. The idea is to calculate and rank the importance of features/dimensions. 
+In order to do that, we use SVD (Singular value decomposition). SVD is used on covariance matrix to calculate and rank the importance of the features.
+When the data has a zero mean vector PCA will have same projections as SVD, otherwise you have to centre the data first before taking SVD.
+
 # Some Resouces: 
 https://www.analyticsvidhya.com/blog/2017/04/40-questions-test-data-scientist-machine-learning-solution-skillpower-machine-learning-datafest-2017/

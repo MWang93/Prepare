@@ -101,3 +101,18 @@
 #### 17. Variables?
 - nominal, dichotomous, ordinal
 - interval, ratio
+
+#### 18. Peason's correlation & Spearman's correlation
+
+#### 19. Gradient Decent(GD) and Stochastic Grandient Decent(SGD)? 
+
+#### 20. Evaluation Metrics for Classification Model
+- confustion matrix: 
+    - sensitivity, specificity and detection rate. 
+    - precision, recall and f1 score   
+- kappa: similar to Accuracy score, but it takes into account the accuracy that would have happened anyway through random predictions.
+- ks statistic
+- roc & auc
+- concordance and discordance
+- somers-d statistic
+- gini coefficient: an indicator of how well the model outperforms random predictions. It can be computed from the area under the ROC curve using the following formula: Gini Coefficient = (2 * AUROC) - 1

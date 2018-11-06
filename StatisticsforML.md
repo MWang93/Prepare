@@ -145,5 +145,18 @@ When the data has a zero mean vector PCA will have same projections as SVD, othe
     - then drop let say the 10% weakest features (e.g. the feature with least absolute coefficients in a linear model) and retrain on the remaining features.
     - iterate until you observe a sharp drop in the predictive accuracy of the model.
 
+#### 28. [Gradient Descent](https://www.kdnuggets.com/2017/04/simple-understand-gradient-descent-algorithm.html)
+Gradient decent is an optimization algorithm used to minimize some fucntion by iteratively movign in the direction of steepest descent as defined by the negative of the gradient. In ML, we use gradient descent to update the parameters of our model. Parameters refer to coefficients in linear regression and weights in neural networks.
+- [learning rate = size of the steps](https://ml-cheatsheet.readthedocs.io/en/latest/gradient_descent.html)
+    - high learning rate: cover more ground each step, risk overshooting the lowest point.
+    - low learning rate: more precise, but time-consuming, takes long time to get to the bottom.
+- cost function: a loss function tells us "how good" our model is at making predictions for a given set of parameters.
+
+#### 29. Stochastic Gradient Descent
+    
+
+
+
+
 # Some Resouces: 
 https://www.analyticsvidhya.com/blog/2017/04/40-questions-test-data-scientist-machine-learning-solution-skillpower-machine-learning-datafest-2017/

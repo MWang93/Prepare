@@ -134,5 +134,16 @@ PCA (principal component analysis) is a method of extracting important variables
 In order to do that, we use SVD (Singular value decomposition). SVD is used on covariance matrix to calculate and rank the importance of the features.
 When the data has a zero mean vector PCA will have same projections as SVD, otherwise you have to centre the data first before taking SVD.
 
+#### 26. For example, when you're given an unfeasible amount of predictors in a predictive modeling task, what're some ways to make the prediction more feasible?
+- principal component analysis
+
+#### 27. Now you have a feasible amount of predicctors, but you're fairly sure that you don't need all of them. How would you perform feature selection on the dataset?
+- ridge / lasso / elastic net regression
+- univariate Feature Selection where a statistical test is applied to each feature individually. You retain only the best features according to the test outcome scores
+- "recursive feature elimination":
+    - first, train a model with all the feature and evaluate its performance on held out data.
+    - then drop let say the 10% weakest features (e.g. the feature with least absolute coefficients in a linear model) and retrain on the remaining features.
+    - iterate until you observe a sharp drop in the predictive accuracy of the model.
+
 # Some Resouces: 
 https://www.analyticsvidhya.com/blog/2017/04/40-questions-test-data-scientist-machine-learning-solution-skillpower-machine-learning-datafest-2017/

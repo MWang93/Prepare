@@ -148,10 +148,14 @@ When the data has a zero mean vector PCA will have same projections as SVD, othe
 #### 28. [Gradient Descent](https://www.kdnuggets.com/2017/04/simple-understand-gradient-descent-algorithm.html)
 Gradient decent is an optimization algorithm used to minimize some fucntion by iteratively movign in the direction of steepest descent as defined by the negative of the gradient. In ML, we use gradient descent to update the parameters of our model. Parameters refer to coefficients in linear regression and weights in neural networks.
 - [learning rate = size of the steps](https://ml-cheatsheet.readthedocs.io/en/latest/gradient_descent.html)
-    - high learning rate: cover more ground each step, risk overshooting the lowest point.
+    - [high learning rate](https://developers.google.com/machine-learning/crash-course/reducing-loss/learning-rate): cover more ground each step, risk overshooting the lowest point.
     - low learning rate: more precise, but time-consuming, takes long time to get to the bottom.
 - cost function: a loss function tells us "how good" our model is at making predictions for a given set of parameters.
-
+- terminologies
+    - epochs: one epoch is when an entire data set is passed forward and backward through the neural nentwork only once, as the number of epochs increase, more number of times the weight are changed, the curve goes from underfitting->optimal->overfitting.
+    - batch size: number of training examples in a single batch.
+    - iteration: number of batches needed to complete one epoch.
+    - so 
 #### 29. Stochastic Gradient Descent
     
 

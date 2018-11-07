@@ -151,11 +151,12 @@ Gradient decent is an optimization algorithm used to minimize some fucntion by i
     - [high learning rate](https://developers.google.com/machine-learning/crash-course/reducing-loss/learning-rate): cover more ground each step, risk overshooting the lowest point.
     - low learning rate: more precise, but time-consuming, takes long time to get to the bottom.
 - cost function: a loss function tells us "how good" our model is at making predictions for a given set of parameters.
-- terminologies
+- [terminologies](https://towardsdatascience.com/epoch-vs-iterations-vs-batch-size-4dfb9c7ce9c9)
     - epochs: one epoch is when an entire data set is passed forward and backward through the neural nentwork only once, as the number of epochs increase, more number of times the weight are changed, the curve goes from underfitting->optimal->overfitting.
     - batch size: number of training examples in a single batch.
     - iteration: number of batches needed to complete one epoch.
-    - so 
+    - for 1 epoch: batch size * iterations(number of batches) = total data set, which means we can divide the data set of 2000 examples into batches of 500 then it will take 4 interations to complete 1 epoch.
+
 #### 29. Stochastic Gradient Descent
     
 

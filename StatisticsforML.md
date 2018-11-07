@@ -159,7 +159,15 @@ Gradient decent is an optimization algorithm used to minimize some fucntion by i
 
 #### 29. Stochastic Gradient Descent
     
-
+#### 30. How can you determine which features are the most important in your model?
+- run the features from a Grandient Boosting Mahien or RF to generate plots of relative importance and information gain for each feature in the ensembles, these models are somewhat robust to collinearity as well so we could get the relative importance of the features.
+- feature selection
+    - subset selection
+        - best subset selection
+        - stepwise selection(forward, backward)
+    - shinkage(regularization)
+        - ridge regression
+        - lasso
 
 
 

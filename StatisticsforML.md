@@ -46,7 +46,7 @@
     - genetic algorithms (GA): they're search algorithms, having two main uses in machine learning: optimization (finding the best weights for a neural network), supervised features selection (genes represent individual feature and the organism represents a candidate set of features)
     - honorable mension: stepwise search: supervised feature selection based on sequential search, it has 2 features: forward and backward.
 - feature extraction
-    - [PCA](https://www.coursera.org/lecture/machine-learning/principal-component-analysis-algorithm-ZYIPa): a unsupervised algorithm that creates linear combination of the original features, the new features are orthogonal, which means that they are uncorrelated. Futhermore, they are ranked in order of their "explained variance".
+    - [PCA](https://www.coursera.org/lecture/machine-learning/principal-component-analysis-algorithm-ZYIPa): a unsupervised algorithm that creates linear combination of the original features, the new features are orthogonal, which means that they are uncorrelated. Futhermore, they are ranked in order of their ["explained variance"](https://towardsdatascience.com/a-one-stop-shop-for-principal-component-analysis-5582fb7e0a9c).
     - LDA: a supervised algorithm that also creates linear combination of your original features. However, unlike PCA, LDA doesn't maximize explained variance, it maximizes the separabiity between classes. 
     - Autoencoders: neural networks that are trained to reconstruct their original inputs.
 
@@ -161,13 +161,17 @@ Gradient decent is an optimization algorithm used to minimize some fucntion by i
     
 #### 30. How can you determine which features are the most important in your model?
 - run the features from a Grandient Boosting Mahien or RF to generate plots of relative importance and information gain for each feature in the ensembles, these models are somewhat robust to collinearity as well so we could get the relative importance of the features.
-- feature selection
-    - subset selection
+- feature selection: it's simple and maintains interpretability of variables, but you gain no information from those variables you've dropped.
+    - filter method:
+        - for classification: Chi-Square, F-Test, Mutual Info
+        - for regression: F-Test, Mutual Info
+    - subset selection 
         - best subset selection
         - stepwise selection(forward, backward)
     - shinkage(regularization)
         - ridge regression
         - lasso
+- feature extraction: we create ten “new” independent variables, where each “new” independent variable is a combination of each of the ten “old” independent variables. However, we create these new independent variables in a specific way and order these new variables by how well they predict our dependent variable.
 
 
 

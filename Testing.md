@@ -24,3 +24,7 @@ with m being the total number of variations tested and abeing the significance 
 Solution: Bonferroni Correction
 - one control, 20 treatment, if the sample size for each group is big enough.
 - ways to attempt to correct for this include changing your confidence level (e.g. Bonferroni Correction) or doing family-wide tests before you dive in to the individual metrics (e.g. Fisher's Protected LSD).
+
+#### 9. What is a p-value? What is the di erence between type-1 and type-2 error?
+- type-1 error: rejecting Ho when Ho is true
+- type-2 error: not rejecting Ho when Ha is true

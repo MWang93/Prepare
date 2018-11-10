@@ -65,6 +65,8 @@ correlated variables, like trees.
 The drawbacks of supervised machine learning in general, especially, when you have extremely low signal-to-noise ratio.
 - the high majority of events is legitimate, therefore, our model tends to predict everything as non-fraud, achieving very high classification accuracy, which is not useful.
   - changing the model internal loss to penalize more false negatives
+    - the cost of a false negeative = the cost of a fraud
+    - the cost of a false positive = the cost of blockign a legitimate customer 
   - using an extremely aggressive cut-off for classification (everything above 0.1 is classified as fraud)
   - reweighing the training events.
 However, these techniques only work if you have many positve cases in absolute numbers in your training set, and to have many positive cases you need massive amount of data. 
@@ -73,6 +75,15 @@ However, these techniques only work if you have many positve cases in absolute n
 
 We can use anomaly detection, we are not training the model but simply on different behavior.
 So, the combination of both approaches: block uses if their pattern is similar to the past frauds.
+
+#### 12. Two-Step authentication
+- first approach
+  - identify cost of false negativea nd values of true negatives
+  - run a test where only a subset of users if required to go through the two-step process
+  - apply values 
+- second approach
+  - segement users accordign to predicted probability of fraud
+  - find which segments is profitable to implement the two-step process
 
 #### 13. [Anomaly detection?](https://www.slideshare.net/streamanalytix/anomaly-detection-real-world-scenarios-approaches-and-live-implementation)
 - taxonomy of anomaly detection

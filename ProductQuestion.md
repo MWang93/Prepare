@@ -60,4 +60,39 @@ extract from X so the tree won't touch it. It is important that you choose a mod
 correlated variables, like trees.
 - In other case, if the tree does significantly use X variable, the next step is the find the reason for why it's the discriminant variable.
 
-#### 12. What are the drawbacks of using supervised machine learning to predict frauds?
+#### 12. What are the drawbacks of using supervised machine learning for fraud?
+The drawbacks of supervised machine learning in general, especially, when you have extremely low signal-to-noise ratio.
+- the high majority of events is legitimate, therefore, our model tends to predict everything as non-fraud, achieving very high classification accuracy, which is not useful.
+  - changing the model internal loss to penalize more false negatives
+  - using an extremely aggressive cut-off for classification (everything above 0.1 is classified as fraud)
+  - reweighing the training events.
+However, these techniques only work if you have many positve cases in absolute numbers in your training set, and to have many positive cases you need massive amount of data. 
+- Also your training set if based on past events that have been identified as frauds. If you haven't caught them in the past, the model won't predict them as fraud, so it's a vicious circle.
+- model cannot defense new forms of fraud, you're always one step behind.
+
+We can use anomaly detection, we are not training the model but simply on different behavior.
+So, the combination of both approaches: block uses if their pattern is similar to the past frauds.
+
+#### 13. [Anomaly detection?](https://www.slideshare.net/streamanalytix/anomaly-detection-real-world-scenarios-approaches-and-live-implementation)
+- taxonomy of anomaly detection
+  - point anomaly
+  - contextual anomaly
+  - collective anomaly
+- choice of algorithm
+  - data has no labels
+    - apply time-series anomly detection algorithms
+    - apply k-means clustering
+  - data has labels
+    - when time-stamps are present: apply standard machine learning classification
+    - when time-stamps are absent: apply sequence classification algorithms
+- approaches to anomay detection
+  - supervised(classification)
+    - data skewness, lack of counter examples
+  - semi supervised(novelty detection)
+    - requires a nomal training dataset
+  - unsupervised(clustering)
+    - faces curse of dimensionality
+
+#### 14. Missing value 
+Missing values due to due the self-selection bias in most cases. 
+eg. Uber trips without rider review, not filling out profile information on a social network.

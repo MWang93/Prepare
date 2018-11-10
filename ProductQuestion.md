@@ -25,8 +25,9 @@ Whenever there's a metric is down, start by breaking it down into its components
 - denominator
 
 #### 5. New feature?
+A common question to ask whether it would be a good idea to implement a new feature, which is a big part of DS job to look at the data, based on findings, suggets and validate new features/product idea. We need to consider it in the following 3 steps.
 - if feature is successful, would it be a good thing for site, can benefit KPI metrics?
-- find a proxy for demand of that feature in current data.
+- find a proxy for the demand of that feature in current data, eg. if many users are already performing some sort of activity on your site, which you can get from using NLP to extract sentiments about this feature.
 - test until implement.
 
 #### 6. Long term metrics?
@@ -96,3 +97,11 @@ So, the combination of both approaches: block uses if their pattern is similar t
 #### 14. Missing value 
 Missing values due to due the self-selection bias in most cases. 
 eg. Uber trips without rider review, not filling out profile information on a social network.
+
+#### 15. A/B test wins with significsant p-value, but you choose not to make the change
+- changes has cost: human labor costs, risk of bugs...
+- inferenrial statistics: if the sample size is very large, it's extremely likely to get a significant p-value, even if the effect is very samll.
+
+#### 16. Radomly split users?
+- eg. Uber with new UI, split users in same market, results will be influenced by competition, so test by market, so we need to match comparable markets in pair.
+- check for novelty efffect.

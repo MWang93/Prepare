@@ -116,3 +116,19 @@ eg. Uber trips without rider review, not filling out profile information on a so
 #### 16. Radomly split users?
 - eg. Uber with new UI, split users in same market, results will be influenced by competition, so test by market, so we need to match comparable markets in pair.
 - check for novelty efffect.
+
+#### 17. What're the implications of curse of hight dimension from a product standpoint?
+- it means every event is almost guaranteed to be an outlier on at least one dimension, if you imagine an n-dimensional space, where n is the number of features, all events will end up close to the border and the center will be empty.
+- it means you're building a product that perfectly fits no one, which is a problem for ds to solve between statistical problem via personalization.
+
+#### 18. A/B test where t-test independency assumptions are not met and check the implications?
+- make sure test is done by randomly spliting users, test and control groups are not independent.
+  - eg. test in social network, the behaviours by test group can be seen by control group.
+- social network are affected by network effects.
+
+#### 19. How find out if users put wrong/fake information 
+
+#### 18. Issue with splitting a small dataset in training/test set?
+If data set is too samll, the actual model will depend heavily on the random way in which you split the data.
+- cross validation
+- simulate sampling more data from the original distribution

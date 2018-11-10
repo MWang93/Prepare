@@ -1,5 +1,5 @@
 # StatisticsforML
-#### 1. Major difference between statistical modeling adn machine learning
+#### 1. Major difference between statistical modeling and machine learning
 - learn algorithm?
 - model shape assumption?
 - prediction accuracy & confidence?

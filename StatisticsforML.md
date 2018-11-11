@@ -105,6 +105,7 @@
 
 #### 18. Peason's correlation & Spearman's correlation
 - pearson correlation coefficient measures the linear relationship between two datasets. Strictly speaking, Pearson’s correlation requires that each dataset be normally distributed. Like other correlation coefficients, this one varies between -1 and +1 with 0 implying no correlation.
+- spearman's correlation is not restricted to linear relationships.
 
 #### 19. Gradient Decent(GD) and Stochastic Grandient Decent(SGD)? 
 

@@ -175,6 +175,21 @@ Gradient decent is an optimization algorithm used to minimize some fucntion by i
         - lasso
 - feature extraction: we create ten “new” independent variables, where each “new” independent variable is a combination of each of the ten “old” independent variables. However, we create these new independent variables in a specific way and order these new variables by how well they predict our dependent variable.
 
+#### 31. Unbalanced data for classification ML
+[Idea](https://www.quora.com/In-classification-how-do-you-handle-an-unbalanced-training-set):
+- Resample differently
+- Try different metrics
+- Penalized Models
+- Anomaly Detection
+Ways:
+- RF/ SMOTE boosting
+- XGBoost/ hype-parameter optimisation
+    - scale_pos_weight
+- SVM /cost sensitive training
+
+- CV
+- Metrics
+
 
 
 # Some Resouces: 

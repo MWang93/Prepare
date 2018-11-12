@@ -177,9 +177,15 @@ Gradient decent is an optimization algorithm used to minimize some fucntion by i
 
 #### 31. Unbalanced data for classification ML
 [Idea](https://www.quora.com/In-classification-how-do-you-handle-an-unbalanced-training-set):
-- Resample differently
+- [Resample differently](https://elitedatascience.com/imbalanced-classes)
+    - up-sample minority class
+    - down-sample majority class
 - Try different metrics
 - Penalized Models
+    - a popular algorithm is Penalized-SVM
+- Use tree-based algorithms
+    - decision tree: always perform well on imbalanced datasets because their hierarhical structure allows them to learn signals from both classes
+    - tree ensembles
 - Anomaly Detection
 Ways:
 - RF/ SMOTE boosting

@@ -148,7 +148,7 @@ When the data has a zero mean vector PCA will have same projections as SVD, othe
     - iterate until you observe a sharp drop in the predictive accuracy of the model.
 
 #### 28. [Gradient Descent](https://www.kdnuggets.com/2017/04/simple-understand-gradient-descent-algorithm.html)
-Gradient decent is an optimization algorithm used to minimize some fucntion by iteratively movign in the direction of steepest descent as defined by the negative of the gradient. In ML, we use gradient descent to update the parameters of our model. Parameters refer to coefficients in linear regression and weights in neural networks.
+Gradient decent is an optimization algorithm used to minimize some fucntion by iteratively moving in the direction of steepest descent as defined by the negative of the gradient. In ML, we use gradient descent to update the parameters of our model. Parameters refer to coefficients in linear regression and weights in neural networks.
 - [learning rate = size of the steps](https://ml-cheatsheet.readthedocs.io/en/latest/gradient_descent.html)
     - [high learning rate](https://developers.google.com/machine-learning/crash-course/reducing-loss/learning-rate): cover more ground each step, risk overshooting the lowest point.
     - low learning rate: more precise, but time-consuming, takes long time to get to the bottom.
@@ -159,7 +159,7 @@ Gradient decent is an optimization algorithm used to minimize some fucntion by i
     - iteration: number of batches needed to complete one epoch.
     - for 1 epoch: batch size * iterations(number of batches) = total data set, which means we can divide the data set of 2000 examples into batches of 500 then it will take 4 interations to complete 1 epoch.
 
-#### 29. Stochastic Gradient Descent
+#### 29. [Types of GD](https://www.hackerearth.com/blog/machine-learning/3-types-gradient-descent-algorithms-small-large-data-sets/)
     
 #### 30. How can you determine which features are the most important in your model?
 - run the features from a Grandient Boosting Mahien or RF to generate plots of relative importance and information gain for each feature in the ensembles, these models are somewhat robust to collinearity as well so we could get the relative importance of the features.

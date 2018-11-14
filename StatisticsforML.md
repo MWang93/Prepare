@@ -187,7 +187,8 @@ Gradient decent is an optimization algorithm used to minimize some fucntion by i
     - decision tree: always perform well on imbalanced datasets because their hierarhical structure allows them to learn signals from both classes
     - tree ensembles
 - Anomaly Detection
-Ways:
+
+Specific Ways:
 - RF/ SMOTE boosting
 - XGBoost/ hype-parameter optimisation
     - scale_pos_weight

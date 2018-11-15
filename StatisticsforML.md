@@ -147,8 +147,8 @@ When the data has a zero mean vector PCA will have same projections as SVD, othe
 
 #### 28. [Gradient Descent](https://www.kdnuggets.com/2017/04/simple-understand-gradient-descent-algorithm.html)
 Gradient decent is an optimization algorithm used to minimize some fucntion by iteratively moving in the direction of steepest descent as defined by the negative of the gradient. In ML, we use gradient descent to update the parameters of our model. Parameters refer to coefficients in linear regression and weights in neural networks.
-- [learning rate = size of the steps](https://ml-cheatsheet.readthedocs.io/en/latest/gradient_descent.html)
-    - [high learning rate](https://developers.google.com/machine-learning/crash-course/reducing-loss/learning-rate): cover more ground each step, risk overshooting the lowest point.
+- [learning rate = size of the steps](https://ml-cheatsheet.readthedocs.io/en/latest/gradient_descent.html): how big the steps are that GD takes into the direction of the local minimum
+    - [high learning rate](https://developers.google.com/machine-learning/crash-course/reducing-loss/learning-rate): cover more ground each step, and maybe not reach the local minimum and risk overshooting the lowest point.
     - low learning rate: more precise, but time-consuming, takes long time to get to the bottom.
 - cost function: a loss function tells us "how good" our model is at making predictions for a given set of parameters.
 - [terminologies](https://towardsdatascience.com/epoch-vs-iterations-vs-batch-size-4dfb9c7ce9c9)
@@ -158,9 +158,9 @@ Gradient decent is an optimization algorithm used to minimize some fucntion by i
     - for 1 epoch: batch size * iterations(number of batches) = total data set, which means we can divide the data set of 2000 examples into batches of 500 then it will take 4 interations to complete 1 epoch.
 
 #### 29. [Types of GD](https://www.hackerearth.com/blog/machine-learning/3-types-gradient-descent-algorithms-small-large-data-sets/)
-- SGD: calculates the error and updates the model for **each example** in the training dataset. If we have N samples, in each epoch we will have N updates of the weights.
-- Batch Gradient Descent: calculates the error for **each example** in the training dataset, but only updates the model after all training examples have been evaluated and are accumulated. If we have N samples, in each epoch we will have 1 updates of the weights.
-- Mini Batch Gradient Descent: splits the training dataset into small batches that are used to calculate model error and update model coefficients. If we divide the training set in X mini-batches, at the end of each epoch we will have X updates of the weights of the network, one for each mini-batch, for each mini-batch m, the algorithm calculates the error of each sample s, and it accumulates the gradients of the samples in m. 
+- SGD: calculates the error and updates the model for **each example** in the training dataset. If we have N samples, in each epoch we will have N updates of the weights. One advantage is that the frequent updates allow us to have a pretty detailed rate of improvement.
+- Batch Gradient Descent: calculates the error for **each example** in the training dataset, but only updates the model after all training examples have been evaluated and are accumulated. If we have N samples, in each epoch we will have 1 updates of the weights. It produces a stable error gradient and a stable convergence. Batch Gradient Descent has the disadvantage that the stable error gradient can sometimes result in a state of convergence that isn’t the best the model can achieve.
+- Mini Batch Gradient Descent: splits the training dataset into small batches that are used to calculate model error and update model coefficients. If we divide the training set in X mini-batches, at the end of each epoch we will have X updates of the weights of the network, one for each mini-batch, for each mini-batch m, the algorithm calculates the error of each sample s, and it accumulates the gradients of the samples in m. It creates a balance between the robustness of stochastic gradient descent and the efficiency of batch gradient descent.
 
 
     

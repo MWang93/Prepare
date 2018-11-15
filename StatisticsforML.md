@@ -107,8 +107,6 @@
 - pearson correlation coefficient measures the linear relationship between two datasets. Strictly speaking, Pearson’s correlation requires that each dataset be normally distributed. Like other correlation coefficients, this one varies between -1 and +1 with 0 implying no correlation.
 - spearman's correlation is not restricted to linear relationships.
 
-#### 19. Gradient Decent(GD) and Stochastic Grandient Decent(SGD)? 
-
 #### 20. Evaluation Metrics for Classification Model
 - confustion matrix: 
     - sensitivity, specificity and detection rate. 
@@ -160,6 +158,11 @@ Gradient decent is an optimization algorithm used to minimize some fucntion by i
     - for 1 epoch: batch size * iterations(number of batches) = total data set, which means we can divide the data set of 2000 examples into batches of 500 then it will take 4 interations to complete 1 epoch.
 
 #### 29. [Types of GD](https://www.hackerearth.com/blog/machine-learning/3-types-gradient-descent-algorithms-small-large-data-sets/)
+- SGD: calculates the error and updates the model for **each example** in the training dataset. If we have N samples, in each epoch we will have N updates of the weights.
+- Batch Gradient Descent: calculates the error for **each example** in the training dataset, but only updates the model after all training examples have been evaluated and are accumulated. If we have N samples, in each epoch we will have 1 updates of the weights.
+- Mini Batch Gradient Descent: splits the training dataset into small batches that are used to calculate model error and update model coefficients. If we divide the training set in X mini-batches, at the end of each epoch we will have X updates of the weights of the network, one for each mini-batch, for each mini-batch m, the algorithm calculates the error of each sample s, and it accumulates the gradients of the samples in m. 
+
+
     
 #### 30. How can you determine which features are the most important in your model?
 - run the features from a Grandient Boosting Mahien or RF to generate plots of relative importance and information gain for each feature in the ensembles, these models are somewhat robust to collinearity as well so we could get the relative importance of the features.

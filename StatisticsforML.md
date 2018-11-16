@@ -200,7 +200,10 @@ Specific Ways:
 - CV
 - Metrics
 
+#### 32. [Activation Functions](https://medium.com/the-theory-of-everything/understanding-activation-functions-in-neural-networks-9491262884e0)
+- https://towardsdatascience.com/activation-functions-neural-networks-1cbd9f8d91d6
 
 
 # Some Resouces: 
 https://www.analyticsvidhya.com/blog/2017/04/40-questions-test-data-scientist-machine-learning-solution-skillpower-machine-learning-datafest-2017/
+https://ml-cheatsheet.readthedocs.io/en/latest/

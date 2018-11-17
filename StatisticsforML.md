@@ -58,10 +58,15 @@
     - low variance: not overfit.
     - high variance: flexible, capture intricate features of training data set, so easily overfit and vary a lot with the training set drawn.
 - simpler model: high bias, low variance. complex model: low bias, high variance.
+![Image](https://github.com/MWang93/Prepare/blob/master/tradeoff.png)
 - example
     - knn(k=1): low bias, high variance.
     - knn(k large): high bias, low variance.
     - linear regression: high bias, low variance.
+- [tradeoff](https://towardsdatascience.com/understanding-the-bias-variance-tradeoff-165e6942b229)
+    - build a good model, we need to find a good balance between bias and variance such that it minimizes the total error.
+    - total error = biased^2 + variance + irreducible error
+   
 
 #### 9. Advantages and disadvantages of decision tree?
 - advantages: decision tree are easy to interpret, nonparametric(robust to outliers), relatively few parameters to tune.
@@ -201,7 +206,14 @@ Specific Ways:
 - Metrics
 
 #### 32. [Activation Functions](https://medium.com/the-theory-of-everything/understanding-activation-functions-in-neural-networks-9491262884e0)
-- https://towardsdatascience.com/activation-functions-neural-networks-1cbd9f8d91d6
+- it calculated the sum of weighted inputs, add bias, determines the output like yes or no.
+- type: linear and non-linear
+- non-linear:
+    - sigmoid or logistic activation fucntion
+    - tanh or hyperbolic tangent Activation Function
+    - ReLU (Rectified Linear Unit) Activation Function
+    - leaky ReLU
+- [cheet sheet](https://towardsdatascience.com/activation-functions-neural-networks-1cbd9f8d91d6)
 
 #### 33. Different metrics for calculating KNN
 

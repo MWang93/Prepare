@@ -132,3 +132,8 @@ eg. Uber trips without rider review, not filling out profile information on a so
 If data set is too samll, the actual model will depend heavily on the random way in which you split the data.
 - cross validation
 - simulate sampling more data from the original distribution
+
+#### What is Churn?
+A common revenue model for SaaS company is to charge a monthly subscription fee for access to their product. Company aim to continually increase the number of users paying for their product. One metric that's helpful for this goal is churn rate.
+
+Churn rate is the percent of subscribers that have canceled within a certain period, usually a month. For user base to grow, the churn rate must be less than the new subscriber rate for the same period.

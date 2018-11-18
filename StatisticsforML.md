@@ -127,7 +127,12 @@
 #### 21. CBOW and Skip gram model
 In CBOW the vectors from the context words are averaged before predicting the center word. In skip-gram there is no averaging of embedding vectors. It seems like the model can learn better representations for the rare words when their vectors are not averaged with the other context words in the process of making the predictions.
 
-#### 22. ReLu, tanh, SIGMOID
+#### 22. [Type of Missing values](https://towardsdatascience.com/how-to-handle-missing-data-8646b18db0d4)
+- missing completely at random: when we say data are missing completely at random, we mean that the missingness is nothing to do with the person being studied.
+- missing at random: we mean that the missingness is to do with the person but can be predicted from other information about the person. 
+- missing not at random: the missingness is specifically related to what is missing.
+
+In the first two cases, it is safe to remove the data with missing values depending upon their occurrences, while in the third case removing observations with missing values can produce a bias in the model.
 
 #### 23. [PCA, t-SNE difference](https://www.biostars.org/p/295174/)
 The main difference between t-SNE (or other manifold learning methods) and PCA is that t-SNE tries to deconvolute relationships between neighbors in high-dimensional data.
@@ -166,8 +171,6 @@ Gradient decent is an optimization algorithm used to minimize some fucntion by i
 - SGD: calculates the error and updates the model for **each example** in the training dataset. If we have N samples, in each epoch we will have N updates of the weights. One advantage is that the frequent updates allow us to have a pretty detailed rate of improvement.
 - Batch Gradient Descent: calculates the error for **each example** in the training dataset, but only updates the model after all training examples have been evaluated and are accumulated. If we have N samples, in each epoch we will have 1 updates of the weights. It produces a stable error gradient and a stable convergence. Batch Gradient Descent has the disadvantage that the stable error gradient can sometimes result in a state of convergence that isn’t the best the model can achieve.
 - Mini Batch Gradient Descent: splits the training dataset into small batches that are used to calculate model error and update model coefficients. If we divide the training set in X mini-batches, at the end of each epoch we will have X updates of the weights of the network, one for each mini-batch, for each mini-batch m, the algorithm calculates the error of each sample s, and it accumulates the gradients of the samples in m. It creates a balance between the robustness of stochastic gradient descent and the efficiency of batch gradient descent.
-
-
     
 #### 30. How can you determine which features are the most important in your model?
 - run the features from a Grandient Boosting Mahien or RF to generate plots of relative importance and information gain for each feature in the ensembles, these models are somewhat robust to collinearity as well so we could get the relative importance of the features.

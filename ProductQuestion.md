@@ -24,12 +24,17 @@ Whenever there's a metric is down, start by breaking it down into its components
 - numerator
 - denominator
 
-#### 5. New feature?
+#### 5. How to think of adding a New Feature?
 A common question to ask whether it would be a good idea to implement a new feature, which is a big part of DS job to look at the data, based on findings, suggets and validate new features/product idea. We need to consider it in the following 3 steps.
-- if feature is successful, would it be a good thing for site, can benefit KPI metrics?
-- find a proxy for the demand of that feature in current data, eg. if many users are already performing some sort of activity on your site, which you can get from using NLP to extract sentiments about this feature.
+- potential influence to business: if feature is successful, would it be a good thing for site, can benefit KPI metrics?
+  - eg. for FB, engagement is its final goal!
+- demand: find a proxy for the demand of that feature in current data.
+  - eg. if many users are already performing some sort of activity on your site, which you can get from using NLP to extract sentiments about this feature.
 - test until implement.
-
+  - define goal
+  - clarify question
+  - define a few metrics to measure the goal
+  
 #### 6. Long term metrics?
 - find a short term proxy for the long term metric, this's the point of this as well as other similar questions about long term user engagement, retaining users, or estimating customer lifetime value, 
 - eg. estimating subscription retention rate, which is usually the percent of users unsubscribe within 12 months, so we could collecting the customer 12 month ago and see whether they unsubscribe it in 12 month, label them 1 or 0, build model with variables you think might influence the result, and the results shows a short term metric has big influence on that long term metrics, so do testing on that short term metrics instead of the long term metric.
@@ -43,7 +48,8 @@ cases.
 - ability to retain current users
 
 #### 9. Novelty effect
-A good proxy to check for novelty effect is: only consider users for which it was the first experience on the site. First time users are obviously not affected by novelty effect.
+- definition: users use more a product whenit is new. 
+- how its effect: a good proxy to check for novelty effect is: only consider users for which it was the first experience on the site. First time users are obviously not affected by novelty effect.
 
 #### 10. Insrumental variable vs Proxy variable
 - An instrumental variable is used to help estimate a causal effect (or to alleviate measurement error). 
@@ -110,12 +116,14 @@ Missing values due to due the self-selection bias in most cases.
 eg. Uber trips without rider review, not filling out profile information on a social network.
 
 #### 15. A/B test wins with significsant p-value, but you choose not to make the change
-- changes has cost: human labor costs, risk of bugs...
+- changes has cost: human labor costs, customer service time, risk of bugs...
 - inferenrial statistics: if the sample size is very large, it's extremely likely to get a significant p-value, even if the effect is very samll.
 
-#### 16. Radomly split users?
+#### 16. Randomly split users?
+- mentally take extreme cases. will these optionshave any effect on the control group?iIf the answer is yes (like it is obviousfor the Uber case), you can't just randomly split users. 
+  - new product has a bug and it is unusable. 
+  - new product is amazing and test users will use it 24/7, novelty effect
 - eg. Uber with new UI, split users in same market, results will be influenced by competition, so test by market, so we need to match comparable markets in pair.
-- check for novelty efffect.
 
 #### 17. What're the implications of curse of hight dimension from a product standpoint?
 - it means every event is almost guaranteed to be an outlier on at least one dimension, if you imagine an n-dimensional space, where n is the number of features, all events will end up close to the border and the center will be empty.
@@ -133,7 +141,14 @@ If data set is too samll, the actual model will depend heavily on the random way
 - cross validation
 - simulate sampling more data from the original distribution
 
-#### What is Churn?
+#### 20. What is Churn?
 A common revenue model for SaaS company is to charge a monthly subscription fee for access to their product. Company aim to continually increase the number of users paying for their product. One metric that's helpful for this goal is churn rate.
 
 Churn rate is the percent of subscribers that have canceled within a certain period, usually a month. For user base to grow, the churn rate must be less than the new subscriber rate for the same period.
+
+#### 21. Avoid vantiy metrics
+Metrics that look good,but are useless. A good way to quickly identify if my metrics are useful is: imagine a bot is creating a bunch of fake accounts. Will my metrics go up? 
+- In the example above, we are good. The engagement metric will drop and alert us that something not good is going on. 
+- On the other hand, if you ONLY looked at new sign ups per day, you would be happy with the fake accounts. 
+If they ask you for just one metric, make sure it is not a metric that a bot could improve.
+

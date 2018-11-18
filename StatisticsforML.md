@@ -219,7 +219,31 @@ Specific Ways:
 - [cheet sheet](https://towardsdatascience.com/activation-functions-neural-networks-1cbd9f8d91d6)
 
 #### 33. Different metrics for calculating KNN
+- KNN is based on a simple underlying idea: classify a value of a new point based on the points close to it.
+    - for prediction: use the average outcome of the neighbors.
+    - for classification, use the majority of the votes of the k closet neighbors.
+- requires 3 things:
+    - the set of stored records
+    - distance metric to compute distance 
+    - the value of k: small k -> overfitting, large k -> high bias
+- problem: dimensionality and scale
+    - when the dimensionality is large, it's hard to find neighbors that are close enough, neighbors are far away
+    - if a single numberic attribute has a large spread, it can dominate the distance metic
+    
 
+#### 34. Types of Ensemble Algorithm
+- bagging: builds different classifier (high variance) by training on repeated samples (with replacement) from the data.
+- boosting: combines simple base classifier (weak learners: high bias, low variance) by up-weighting data points which are classified incorrectly.
+- random forest: averages many trees which are constructed with some amount of randomness.
+
+#### 35. Logistic Regression 
+- goal: estimating the log odds of an event.
+- equation: ln(p/(1-p)) = a + b1x1 + b2x2 + ... 
+- how: instead of using y as the dependent variable, we use a function of it, which is called logit, once the logit has been predicted, it can be mapped back to probability.
+
+#### 36. SVM
+- output SVM to probability: https://stackoverflow.com/questions/49507066/predict-probabilities-using-svm
+- optimization?
 
 # Some Resouces: 
 https://www.analyticsvidhya.com/blog/2017/04/40-questions-test-data-scientist-machine-learning-solution-skillpower-machine-learning-datafest-2017/

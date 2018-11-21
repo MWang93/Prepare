@@ -95,8 +95,8 @@
 - auc is robust to class imbalance, unlike raw accuracy.
 
 #### 15. Error I and Error II
-- error I & false positive rate: predict a man is pregnant, falsely infer the existence of something that is not there.
-- error II & false negative rate: predict a pregnant woman is not pregnant, falsely infer the absence of something that is.
+- error I & false positive rate & false alarm rate && alpha & 1-tnr: predict a man is pregnant, falsely infer the existence of something that is not there.
+- error II & false negative rate & beta & 1- tpr: predict a pregnant woman is not pregnant, falsely infer the absence of something that is.
 - statistical hypothesis testing, a type I error is the incorrect rejection of a true null hypotheis, while type II error is incorrectly retaining a false null hypothesis. 
  
 #### 16. The cost of false positive is higher than false negative as well as the other way?

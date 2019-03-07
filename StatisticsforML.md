@@ -36,9 +36,11 @@
 
 #### 6. Curse of Dimension
 - the difficulty of searching through a solution space becomes much harder as you have more features, which means that everything is "far away" from each other.
+    - distance/similarity computations are at least linear to the number of dimensions.
+    - index structures fails as the dimmensionality of the data increases.
     - example: knn, if there are lots of features, points distance will be far away (using distance equation), the feature space becomes increasingly sparse; that is, less dense or emptier, and in high dimensions there is little difference between the nearest and the farthest neighbouwhich, which tends to be overfitting.
 - two solutions: feature selection & feature extraction.
-- difference: feature selection keeps a subset of the original features while feature extraction creates brand new ones. 
+    - difference: feature selection keeps a subset of the original features while feature extraction creates brand new ones. 
 
 #### [7. Feature selection vs Feature extraction](https://elitedatascience.com/dimensionality-reduction-algorithms)
 - feature selection

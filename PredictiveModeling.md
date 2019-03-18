@@ -42,3 +42,5 @@
 #### 6. Regularization
 https://www.analyticsvidhya.com/blog/2018/04/fundamentals-deep-learning-regularization-techniques/
    
+#### 7. Logistic 
+https://ml-cheatsheet.readthedocs.io/en/latest/logistic_regression.html

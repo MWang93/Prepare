@@ -38,4 +38,7 @@
 -  Accuracy
 -  AUROC
 -  Logloss/deviance
+
+#### 6. Regularization
+https://www.analyticsvidhya.com/blog/2018/04/fundamentals-deep-learning-regularization-techniques/
    

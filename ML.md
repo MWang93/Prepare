@@ -18,3 +18,16 @@ Tuning Smoothness and Penalties: n_spline, lam, constrains
 1. https://christophm.github.io/interpretable-ml-book/extend-lm.html
 2. https://codeburst.io/pygam-getting-started-with-generalized-additive-models-in-python-457df5b4705f
 3. https://medium.com/just-another-data-scientist/building-interpretable-models-with-generalized-additive-models-in-python-c4404eaf5515
+
+
+# BERT
+
+InputExample Format(tsv): 
+-  An ID for the row
+-  The label for the row (should be an int)
+-  A column of the same letter for all rows. BERT wants, but we don’t use
+-  The text for row
+
+InputFeature Format:
+-  Purely numberical data
+-  Tokenizing the text, truncate the long sequence and pad the short sequence to the given sequence length (max 512)

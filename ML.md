@@ -23,11 +23,25 @@ Tuning Smoothness and Penalties: n_spline, lam, constrains
 # BERT
 
 InputExample Format(tsv): 
--  An ID for the row
--  The label for the row (should be an int)
--  A column of the same letter for all rows. BERT wants, but we don’t use
--  The text for row
+-  guid: Unique ID for the row
+-  text_a: The label for the row (should be an int)
+-  text_b: A column of the same letter for all rows. BERT wants, but we don’t use
+-  labels: The text for row (will be empty for test data)
 
-InputFeature Format:
+InputFeature Requires:
+-  Convert InputExample to InputFeature
 -  Purely numberical data
 -  Tokenizing the text, truncate the long sequence and pad the short sequence to the given sequence length (max 512)
+
+InputFeature Format:
+- input_ids: list of numberical ids for the tokenised text
+- input_mask: will be set to 1 for real tokens and 0 for the padding tokens
+- segment_ids: 
+- label_ids:one-hot encoded labels for the text
+
+Masked LM
+
+Next Sentence Prediction 
+
+1. https://towardsdatascience.com/bert-explained-state-of-the-art-language-model-for-nlp-f8b21a9b6270
+2. https://medium.com/swlh/a-simple-guide-on-using-bert-for-text-classification-bbf041ac8d04

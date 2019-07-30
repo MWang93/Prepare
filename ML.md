@@ -12,6 +12,7 @@ For example:
 GAM:
 
 Interpret: Partial dependency plots
+
 Tuning Smoothness and Penalties: n_spline, lam, constrains
 
 1. https://christophm.github.io/interpretable-ml-book/extend-lm.html

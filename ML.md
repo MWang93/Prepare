@@ -22,6 +22,8 @@ Tuning Smoothness and Penalties: n_spline, lam, constrains
 
 # BERT
 
+Inportant: They employed masked language modeling. In other words, they hid 15% of the words and used their position information to infer them. Finally, they also mixed it up a little bit to make the learning process more effective.
+
 InputExample Format(tsv): 
 -  guid: Unique ID for the row
 -  text_a: The label for the row (should be an int)
@@ -29,19 +31,24 @@ InputExample Format(tsv):
 -  labels: The text for row (will be empty for test data)
 
 InputFeature Requires:
--  Convert InputExample to InputFeature
--  Purely numberical data
--  Tokenizing the text, truncate the long sequence and pad the short sequence to the given sequence length (max 512)
+-  Require: convert InputExample to InputFeature, purely numberical data
+-  Steps: 
+  -  tokenizing embedding: tokenize the text, truncate the long sequence or pad the short sequence to the given sequence length (max 512, 128 ...)
+  -  sentence embedding
+  -  transformer positional embedding
 
 InputFeature Format:
 - input_ids: list of numberical ids for the tokenised text
 - input_mask: will be set to 1 for real tokens and 0 for the padding tokens
-- segment_ids: 
-- label_ids:one-hot encoded labels for the text
+- segment_ids: sigle sentence or multiple sentence
+- label_ids: one-hot encoded labels for the text
 
 Masked LM
+- uncased BERT Base: 12 layers encoders, which embedding do you want, probably the sum of last 4 layers
 
 Next Sentence Prediction 
 
 1. https://towardsdatascience.com/bert-explained-state-of-the-art-language-model-for-nlp-f8b21a9b6270
 2. https://medium.com/swlh/a-simple-guide-on-using-bert-for-text-classification-bbf041ac8d04
+3. https://towardsdatascience.com/nlp-extract-contextualized-word-embeddings-from-bert-keras-tf-67ef29f60a7b
+

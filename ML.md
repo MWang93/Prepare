@@ -33,9 +33,9 @@ InputExample Format(tsv):
 InputFeature Requires:
 -  Require: convert InputExample to InputFeature, purely numberical data
 -  Steps: 
-  -  tokenizing embedding: tokenize the text, truncate the long sequence or pad the short sequence to the given sequence length (max 512, 128 ...)
-  -  sentence embedding
-  -  transformer positional embedding
+    -  tokenizing embedding: tokenize the text, truncate the long sequence or pad the short sequence to the given sequence length (max 512, 128 ...)
+    -  sentence embedding
+    -  transformer positional embedding
 
 InputFeature Format:
 - input_ids: list of numberical ids for the tokenised text
@@ -44,7 +44,7 @@ InputFeature Format:
 - label_ids: one-hot encoded labels for the text
 
 Masked LM
-- uncased BERT Base: 12 layers encoders, which embedding do you want, probably the sum of last 4 layers
+- uncased BERT Base: 12 layers encoders, which embedding do you want, probably the sum of last 4 layer
 
 Next Sentence Prediction 
 
@@ -52,3 +52,18 @@ Next Sentence Prediction
 2. https://medium.com/swlh/a-simple-guide-on-using-bert-for-text-classification-bbf041ac8d04
 3. https://towardsdatascience.com/nlp-extract-contextualized-word-embeddings-from-bert-keras-tf-67ef29f60a7b
 
+
+# Neural Networks
+
+Regularization:
+-  dropout: randomly turn off certain parts of our network while training
+    -  decide that during this epoch or this mini-batch, a bunch of neurons will be turned off
+    -  assign each neuron with a probability ps, then based on this, the neuron will either compute its output or not
+    -  dropout is only used during training time, during test time, all the nodes of our network are always present
+-  data augmentation: instead of feeding the model with the same pictures every time, we do small random transformations (a bit of rotation, zoom, translation, etc…) that doesn’t change what’s inside the image (for the human eye) but changes its pixel values. 
+-  weight decay: multiply the sum of squares with another smaller number to the loss function
+    -  Loss = MSE(y_hat, y) + wd * sum(w^2), wd is the weight decay
+    -  w(t) = w(t-1) - lr * dLoss / dw => d(wd * w^2) / dw = 2 * wd * w (similar to dx^2/dx = 2x)
+    -  generally a wd = 0.1 works pretty well
+ 
+1. https://becominghuman.ai/this-thing-called-weight-decay-a7cd4bcfccab

@@ -26,17 +26,17 @@ Inportant: They employed masked language modeling. In other words, they hid 15% 
 
 InputExample Format(tsv): 
 -  guid: Unique ID for the row
--  text_a: The label for the row (should be an int)
+-  text_a: Text
 -  text_b: A column of the same letter for all rows. BERT wants, but we don’t use
 -  labels: The text for row (will be empty for test data)
 
 InputFeature Requires:
--  Require: convert InputExample to InputFeature, purely numberical data
+-  Require: convert InputExample to InputFeature (purely numberical data)
 -  Steps: 
     -  tokenizing embedding: tokenize the text, truncate the long sequence or pad the short sequence to the given sequence length (max 512, 128 ...)
     -  sentence embedding
     -  transformer positional embedding
-
+    
 InputFeature Format:
 - input_ids: list of numberical ids for the tokenised text
 - input_mask: will be set to 1 for real tokens and 0 for the padding tokens
@@ -45,6 +45,13 @@ InputFeature Format:
 
 Masked LM
 - uncased BERT Base: 12 layers encoders, which embedding do you want, probably the sum of last 4 layer
+
+Output
+- "pooled_output" for classification tasks on an entire sentence
+- "sequence_outputs" for token-level output
+
+Estimate
+- classification matrix
 
 Next Sentence Prediction 
 

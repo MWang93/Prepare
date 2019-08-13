@@ -23,7 +23,7 @@ Tuning Smoothness and Penalties: n_spline, lam, constrains
 # Word2vec
 Word2vec is a neural network structure to generate word embedding by training the model on a supervised classification problem. In the word2vec architecture, the two algorithm names are “continuous bag of words” (CBOW) and “skip-gram” (SG).
 
-- ![model overview](word2vec.png)
+![model overview](word2vec.png)
 
 1. Example: https://towardsdatascience.com/word2vec-from-scratch-with-numpy-8786ddd49e72
 

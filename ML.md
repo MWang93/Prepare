@@ -20,6 +20,14 @@ Tuning Smoothness and Penalties: n_spline, lam, constrains
 3. https://medium.com/just-another-data-scientist/building-interpretable-models-with-generalized-additive-models-in-python-c4404eaf5515
 
 
+# Word2vec
+Word2vec is a neural network structure to generate word embedding by training the model on a supervised classification problem. In the word2vec architecture, the two algorithm names are “continuous bag of words” (CBOW) and “skip-gram” (SG).
+
+- ![model overview](word2vec.png)
+
+1. Example: https://towardsdatascience.com/word2vec-from-scratch-with-numpy-8786ddd49e72
+
+
 # BERT
 
 Inportant: They employed masked language modeling. In other words, they hid 15% of the words and used their position information to infer them. Finally, they also mixed it up a little bit to make the learning process more effective.

@@ -23,18 +23,47 @@ Tuning Smoothness and Penalties: n_spline, lam, constrains
 1. Context-free models such as word2vec or GloVe generate a single word embedding representation for each word in the vocabulary. For example, the word “bank” would have the same context-free representation in “bank account” and “bank of the river.”
 2. Contextual models instead generate a representation of each word that is based on the other words in the sentence. Contextual representations can further be unidirectional or bidirectional. For example, in the sentence “I accessed the bank account,” a unidirectional contextual model would represent “bank” based on “I accessed the” but not “account.” However, BERT represents “bank” using both its previous and next context — “I accessed the … account” — starting from the very bottom of a deep neural network, making it deeply bidirectional.
 
-# Word2vec
+# Traditional Embedding
+## BoW
+Each word or n-gram is linked to a vector index and marked as 0 or 1 depending on whether it occurs in a given document.
+- don’t encode any information with regards to the meaning of a given word.
+- word occurrences are evenly weighted independently of how frequently or what context they occur. 
+
+## TF-IDF
+Numerical statistic that is intended to reflect how important a word or n-gram is to a document in a collection or corpus. 
+- still unable to capture the word meaning.
+
+## Distributional Embeddings
+Enable word vectors to encapsulate contextual context.
+
+# Neural Embeddings
+## Word2vec
 Word2vec is a neural network structure to generate word embedding by training the model on a supervised classification problem. In the word2vec architecture, the two algorithm names are “continuous bag of words” (CBOW) and “skip-gram” (SG).
+- only take local contexts into account. Word2Vec does not take advantage of global context. 
 
 ![model overview](word2vec.png)
 
 1. Example: https://towardsdatascience.com/word2vec-from-scratch-with-numpy-8786ddd49e72
 
-# Doc2vec
+## Doc2vec
 In doc2vec architecture, the corresponding algorithms are “distributed memory” (DM) and “distributed bag of words” (DBOW).
 
-# BERT
+# Neural NLP Architectures
+## MNL
 
+## CNN
+CNN works as a n-gram feature extractors for embeddings. 
+- convolutional Layer(kernel/filter) is to extract the high-level features.
+- pooling layer is to decrease the computational power required to process the data through dimensionality reduction. 
+- fully connected layer with dropout and softmax output.
+
+1. Simple explaination: https://towardsdatascience.com/a-comprehensive-guide-to-convolutional-neural-networks-the-eli5-way-3bd2b1164a53
+
+## RNN(LSTMs and GRUs)
+
+## ELMo
+
+## BERT
 Inportant: They employed masked language modeling. In other words, they hid 15% of the words and used their position information to infer them. Finally, they also mixed it up a little bit to make the learning process more effective.
 
 InputExample Format(tsv): 

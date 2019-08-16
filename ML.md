@@ -37,16 +37,19 @@ Numerical statistic that is intended to reflect how important a word or n-gram i
 Enable word vectors to encapsulate contextual context.
 
 # Neural Embeddings
-## Word2vec
-Word2vec is a neural network structure to generate word embedding by training the model on a supervised classification problem. In the word2vec architecture, the two algorithm names are “continuous bag of words” (CBOW) and “skip-gram” (SG).
-- only take local contexts into account. Word2Vec does not take advantage of global context. 
+## Word2vec(Doc2vec)
+Word2vec is a neural network structure to generate word embedding by training the model on a supervised classification problem. In the word2vec architecture, the two algorithm names are “continuous bag of words” (CBOW) and “skip-gram” (SG). Word2vec only takes local contexts into account and does not take advantage of global context. 
+
+Word2vec is a predictive model which learns their vectors in order to improve their predictive ability of Loss(target word | context words; Vectors), i.e. the loss of predicting the target words from the context words given the vector representations. In word2vec, this is cast as a feed-forward neural network and optimized as such using SGD, etc.
 
 ![model overview](word2vec.png)
 
 1. Example: https://towardsdatascience.com/word2vec-from-scratch-with-numpy-8786ddd49e72
 
-## Doc2vec
-In doc2vec architecture, the corresponding algorithms are “distributed memory” (DM) and “distributed bag of words” (DBOW).
+## GloVe
+GloVe is a count-based model which learns their vectors by doing dimensionality reduction on the co-occurrence information. Firsly, construct a large matrix of (word * context) co-occurrence information. Secondly, factorize this matrix to a lower-dimensional (word * features) matrix, where each row yield a vector representation for each word. In the specific case of GloVe, the counts matrix is preprocessed by normalizing the counts and log-smoothing them.
+
+1. The difference between GloVe and Word2vec: https://www.quora.com/How-is-GloVe-different-from-word2vec
 
 # Neural NLP Architectures
 ## MNL

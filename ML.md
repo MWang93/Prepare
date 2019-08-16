@@ -62,6 +62,11 @@ CNN works as a n-gram feature extractors for embeddings.
 ## RNN(LSTMs and GRUs)
 
 ## ELMo
+![model overview](ELMo.gif)
+- Unlike traditional word embeddings such as word2vec and GLoVe, the ELMo vector assigned to a token or word is actually a function of the entire sentence containing that word. Therefore, the same word can have different word vectors under different contexts.
+
+1. Simple introduction: https://www.analyticsvidhya.com/blog/2019/03/learn-to-use-elmo-to-extract-features-from-text/
+
 
 ## BERT
 Inportant: They employed masked language modeling. In other words, they hid 15% of the words and used their position information to infer them. Finally, they also mixed it up a little bit to make the learning process more effective.

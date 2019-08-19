@@ -30,25 +30,12 @@ GloVe is a count-based model which learns their vectors by doing dimensionality 
 
 1. The difference between GloVe and Word2vec: https://www.quora.com/How-is-GloVe-different-from-word2vec
 
-# Neural NLP Architectures
-## MNL
-
-## CNN
-CNN works as a n-gram feature extractors for embeddings. 
-- convolutional Layer(kernel/filter) is to extract the high-level features.
-- pooling layer is to decrease the computational power required to process the data through dimensionality reduction. 
-- fully connected layer with dropout and softmax output.
-
-1. Simple explaination: https://towardsdatascience.com/a-comprehensive-guide-to-convolutional-neural-networks-the-eli5-way-3bd2b1164a53
-
-## RNN(LSTMs and GRUs)
-
+# Transformer
 ## ELMo
 ![model overview](ELMo.gif)
 - Unlike traditional word embeddings such as word2vec and GLoVe, the ELMo vector assigned to a token or word is actually a function of the entire sentence containing that word. Therefore, the same word can have different word vectors under different contexts.
 
 1. Simple introduction: https://www.analyticsvidhya.com/blog/2019/03/learn-to-use-elmo-to-extract-features-from-text/
-
 
 ## BERT
 Inportant: They employed masked language modeling. In other words, they hid 15% of the words and used their position information to infer them. Finally, they also mixed it up a little bit to make the learning process more effective.
@@ -92,6 +79,19 @@ Difference
 2. https://medium.com/swlh/a-simple-guide-on-using-bert-for-text-classification-bbf041ac8d04
 3. https://towardsdatascience.com/nlp-extract-contextualized-word-embeddings-from-bert-keras-tf-67ef29f60a7b
 4. [movie setiment analysis](https://github.com/google-research/bert/blob/master/predicting_movie_reviews_with_bert_on_tf_hub.ipynb)
+
+# Neural NLP Architectures
+## MNL
+
+## CNN
+CNN works as a n-gram feature extractors for embeddings. 
+- convolutional Layer(kernel/filter) is to extract the high-level features.
+- pooling layer is to decrease the computational power required to process the data through dimensionality reduction. 
+- fully connected layer with dropout and softmax output.
+
+1. Simple explaination: https://towardsdatascience.com/a-comprehensive-guide-to-convolutional-neural-networks-the-eli5-way-3bd2b1164a53
+
+## RNN(LSTMs and GRUs)
 
 
 # Neural Networks

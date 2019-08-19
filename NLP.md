@@ -24,6 +24,8 @@ Word2Vec showed that we can use a vector (a list of numbers) to properly represe
 Word2vec is a predictive model which learns their vectors in order to improve their predictive ability of Loss(target word | context words; Vectors), i.e. the loss of predicting the target words from the context words given the vector representations. In word2vec, this is cast as a feed-forward neural network and optimized as such using SGD, etc.
 
 ![model overview](word2vec.png)
+
+This is an example of the GloVe embedding of the word “stick” (with an embedding vector size of 200)
 ![embedding example](GloVe_embedding_example.png)
 
 1. Example: https://towardsdatascience.com/word2vec-from-scratch-with-numpy-8786ddd49e72

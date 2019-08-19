@@ -1,24 +1,3 @@
-# GLM and GAM
-
-Goal: To solve linear regression model "weak" assumption: gaussian distribution, no interaction, linear relationship ...
-
-Component: link function, weighted sum, a probability distribution
-
-For example: 
--  non-Gaussian outcomes: add a log function if it's a Poisson distribution
--  interactions: add a column to the feature matrix that represents the interaction between the features and fit the model as usual
--  non-linear effects: simple transformation of feature, categorization of the feature, GAM
-
-GAM:
-
-Interpret: Partial dependency plots
-
-Tuning Smoothness and Penalties: n_spline, lam, constrains
-
-1. https://christophm.github.io/interpretable-ml-book/extend-lm.html
-2. https://codeburst.io/pygam-getting-started-with-generalized-additive-models-in-python-457df5b4705f
-3. https://medium.com/just-another-data-scientist/building-interpretable-models-with-generalized-additive-models-in-python-c4404eaf5515
-
 # NLP
 1. Context-free models such as word2vec or GloVe generate a single word embedding representation for each word in the vocabulary. For example, the word “bank” would have the same context-free representation in “bank account” and “bank of the river.”
 2. Contextual models instead generate a representation of each word that is based on the other words in the sentence. Contextual representations can further be unidirectional or bidirectional. For example, in the sentence “I accessed the bank account,” a unidirectional contextual model would represent “bank” based on “I accessed the” but not “account.” However, BERT represents “bank” using both its previous and next context — “I accessed the … account” — starting from the very bottom of a deep neural network, making it deeply bidirectional.

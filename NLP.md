@@ -19,9 +19,12 @@ Enable word vectors to encapsulate contextual context.
 ## Word2vec(Doc2vec)
 Word2vec is a neural network structure to generate word embedding by training the model on a supervised classification problem. In the word2vec architecture, the two algorithm names are “continuous bag of words” (CBOW) and “skip-gram” (SG). Word2vec only takes local contexts into account and does not take advantage of global context. 
 
+Word2Vec showed that we can use a vector (a list of numbers) to properly represent words in a way that captures semantic or meaning-related relationships (e.g. the ability to tell if words are similar, or opposites, or that a pair of words like “Stockholm” and “Sweden” have the same relationship between them as “Cairo” and “Egypt” have between them) as well as syntactic, or grammar-based, relationships (e.g. the relationship between “had” and “has” is the same as that between “was” and “is”).
+
 Word2vec is a predictive model which learns their vectors in order to improve their predictive ability of Loss(target word | context words; Vectors), i.e. the loss of predicting the target words from the context words given the vector representations. In word2vec, this is cast as a feed-forward neural network and optimized as such using SGD, etc.
 
 ![model overview](word2vec.png)
+![embedding example](GloVe_embedding_example.png)
 
 1. Example: https://towardsdatascience.com/word2vec-from-scratch-with-numpy-8786ddd49e72
 

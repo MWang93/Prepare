@@ -26,23 +26,26 @@ Word2vec is a predictive model which learns their vectors in order to improve th
 
 ![model overview](word2vec.png)
 
-This is an example of the GloVe embedding of the word “stick” (with an embedding vector size of 200)
-![embedding example](GloVe_embedding_example.png)
-
 1. Example: https://towardsdatascience.com/word2vec-from-scratch-with-numpy-8786ddd49e72
 
 ## GloVe
 GloVe is a count-based model which learns their vectors by doing dimensionality reduction on the co-occurrence information. Firsly, construct a large matrix of (word * context) co-occurrence information. Secondly, factorize this matrix to a lower-dimensional (word * features) matrix, where each row yield a vector representation for each word. In the specific case of GloVe, the counts matrix is preprocessed by normalizing the counts and log-smoothing them.
 
+This is an example of the GloVe embedding of the word “stick” (with an embedding vector size of 200)
+![embedding example](GloVe_embedding_example.png)
+
 1. The difference between GloVe and Word2vec: https://www.quora.com/How-is-GloVe-different-from-word2vec
 
-# Transformer
 ## ELMo
 ![model overview](ELMo.gif)
-- Unlike traditional word embeddings such as word2vec and GLoVe, the ELMo vector assigned to a token or word is actually a function of the entire sentence containing that word. Therefore, the same word can have different word vectors under different contexts.
+-  Unlike traditional word embeddings such as word2vec and GLoVe, the ELMo vector assigned to a token or word is actually a function of the entire sentence containing that word. Therefore, the same word can have different word vectors under different contexts.
+-  ELMo gained its language understanding from being trained to predict the next word in a sequence of words - a task called Language Modeling. 
+-  ELMo's secrete is to train a bi-directional LSTM and concatenate hidden layers followed by weighted summation.
 
 1. Simple introduction: https://www.analyticsvidhya.com/blog/2019/03/learn-to-use-elmo-to-extract-features-from-text/
+2. Nice explanation: http://jalammar.github.io/illustrated-bert/
 
+# Transformer(go beyond LSTM)
 ## BERT
 Inportant: They employed masked language modeling. In other words, they hid 15% of the words and used their position information to infer them. Finally, they also mixed it up a little bit to make the learning process more effective.
 

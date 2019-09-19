@@ -36,6 +36,11 @@ This is an example of the GloVe embedding of the word “stick” (with an embed
 
 1. The difference between GloVe and Word2vec: https://www.quora.com/How-is-GloVe-different-from-word2vec
 
+## Pre-ELMo(Tag LM)
+-  Step1: pretrain word embeddings and language model
+-  Step2: prepare word embedding and LM embedding for each token in the input sequence
+-  Step3: use both word embeddings and LM embeddings in the sequence tagging model
+
 ## ELMo
 ![model overview](/Knowledge_Based/pictures/ELMo.gif)
 -  Unlike traditional word embeddings such as word2vec and GLoVe, the ELMo vector assigned to a token or word is actually a function of the entire sentence containing that word. Therefore, the same word can have different word vectors under different contexts.
@@ -46,6 +51,32 @@ This is an example of the GloVe embedding of the word “stick” (with an embed
 2. Nice explanation: http://jalammar.github.io/illustrated-bert/
 
 # Transformer(go beyond LSTM)
+While ELMo was able to overcome many of the shortcomings of previous word embeddings architectures, it difficult to learn longer sequences of text such as sentences or paragraphs and also makes it slower to train. However, the transformer architecture allows inputs to be processed simultaneously. It was mentioned in a paper [Attention is all you need](https://arxiv.org/abs/1706.03762).
+
+A high-level look:
+![high level look](/Knowledge_Based/pictures/transformer_high_level_look.png)
+- Encoders: the encoding component is a stack of encoders, all identical in structure.
+- Decoders: the decoding component is a stack of decoders of the same number, has both those layers, but between them is an attention layer that helps the decoder focus on relevant parts of the input sentence.
+![high level look](/Knowledge_Based/pictures/transformer_encoder_decoder.png)
+
+A Detailed look:
+![high level look](/Knowledge_Based/pictures/transformer_detailed_encoder_decoder.png)
+- Encoders: 
+    - turn each input word into a vector using an embedding algorithm
+    - add positional encoding, which helps it determine the position of each word, or the distance between different words in the sequence
+    - self attention is the method the Transformer uses to bake the “understanding” of other relevant words into the one we’re currently processing
+    - layer normalization: reduce the training time, very effective at stabilizing the hidden state dynamics in recurrent networks
+    - output of the top encoder is then transformed into a set of attention vectors K and V, which are used by each decoder in its “encoder-decoder attention” layer, helping the decoder focus on appropriate places in the input sequence
+- Decoders:
+    - the self-attention layer is only allowed to attend to earlier positions in the output sequence, which is done by masking future positions (setting them to -inf) before the softmax step in the self-attention calculation
+    - the “Encoder-Decoder Attention” layer works just like multiheaded self-attention, except it creates its Queries matrix from the layer below it, and takes the Keys and Values matrix from the output of the encoder stack
+![decoder look](/Knowledge_Based/pictures/transformer_decoder.gif)
+- Linear and Softmax Layer
+
+![decoder look](/Knowledge_Based/pictures/transformer_decoder_output_softmax.png)
+
+1. Illustrated Transformer: http://jalammar.github.io/illustrated-transformer/
+
 ## BERT
 Inportant: They employed masked language modeling. In other words, they hid 15% of the words and used their position information to infer them. Finally, they also mixed it up a little bit to make the learning process more effective.
 
@@ -89,17 +120,58 @@ Difference
 3. https://towardsdatascience.com/nlp-extract-contextualized-word-embeddings-from-bert-keras-tf-67ef29f60a7b
 4. [movie setiment analysis](https://github.com/google-research/bert/blob/master/predicting_movie_reviews_with_bert_on_tf_hub.ipynb)
 
+## Comparison among NLP models
+![model overview](/Knowledge_Based/pictures/comparison_among_NLP_model.png)
+
 # Neural NLP Architectures
 ## MNL
 
 ## CNN
 CNN works as a n-gram feature extractors for embeddings. 
-- convolutional Layer(kernel/filter) is to extract the high-level features.
-- pooling layer is to decrease the computational power required to process the data through dimensionality reduction. 
+- convolutional layer(kernel/filter) is to extract the high-level features.
+- pooling layer (max, average pooling) is to decrease the computational power required to process the data through dimensionality reduction. 
 - fully connected layer with dropout and softmax output.
 
 1. Simple explaination: https://towardsdatascience.com/a-comprehensive-guide-to-convolutional-neural-networks-the-eli5-way-3bd2b1164a53
 
 ## RNN(LSTMs and GRUs)
 
+# Machine Translation
+# Seq2Seq
 # Attention Mechanism
+Attention is a concept that helped improve the performance of neural machine translation applications.
+
+Core Idea: on each step of the decoder, use direact connection to encoder to focus on a particular part of the source sentense.
+
+Problem to Solve: for example in NMT(Neural Machine Translation), they work by encoding the sentence into a vector using RNN and then decoding them based on that vector also using RNN, which is an information bottleneck for 2 reasons:
+-  hard to capture all the information in one vector
+-  hard to produce a good translation based on that vector(as we all know RNN has problem to deal with long-range dependencies)
+
+Great: 
+-  improve NMT by allowing decoder to focus on certainparts of the source
+-  solve the bottleneck problem by allowing decoder to look directly at source
+-  helps with vanishing gradient by providing shortcut to faraway states
+-  provides interpretability by inspecting attention distribution, so we get soft alignment for free (it's cool because we never explicitly trained an alignment system and the network just learned alignment by itself)
+
+Cost of Attention: we need to calculate an attention value for each combination of input and output word (you have a 50-word input sequence and generate a 50-word output sequence that would be 2500 attention values) but it hasn’t stopped attention mechanisms from becoming quite popular and performing well on many tasks.
+
+An alternative approach to attention is to use Reinforcement Learning to predict an approximate location to focus to. 
+
+Different Attentions
+-  generalized attention
+-  self attention
+-  multi-Head Attention
+
+1. Nice explaination: http://www.wildml.com/2016/01/attention-and-memory-in-deep-learning-and-nlp/
+2. CS224N: https://web.stanford.edu/class/cs224n/slides/cs224n-2019-lecture13-contextual-representations.pdf
+3. 动画解释：https://jalammar.github.io/visualizing-neural-machine-translation-mechanics-of-seq2seq-models-with-attention/
+
+## Evaluation: BLEU(Bilingual Evaluation Understudy)
+
+BLEU compares the machine-written translation to one or several human-written translation and computes a similirity score based on:
+-  n-gram precision (usually for 1,2,3,4-grams)
+-  plus a penalty for too-short system translation
+
+BLEU is useful but imperfect
+-  many valid way to translate a sentense
+-  so a good translation can get a poor BLEU score because it has low n-gram overlap with the human translation

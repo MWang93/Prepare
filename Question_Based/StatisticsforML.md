@@ -119,7 +119,7 @@
 - confustion matrix: 
     - sensitivity, specificity and detection rate. 
     - precision, recall and f1 score 
-- cross-entropy loss or [log loss](https://medium.com/@fzammito/whats-considered-a-good-log-loss-in-machine-learning-a529d400632d): a perfect model would have a log loss of 0.
+- [log loss](https://datawookie.netlify.com/blog/2015/12/making-sense-of-logarithmic-loss/): accuracy of a classifier by penalising false classifications, heavily penalises classifiers that are confident about an incorrect classification. For example, if for a particular observation, the classifier assigns a very small probability to the correct class then the corresponding contribution to the Log Loss will be very large indeed. 
 - kappa: similar to Accuracy score, but it takes into account the accuracy that would have happened anyway through random predictions.
 - ks statistic
 - roc & auc
@@ -247,6 +247,9 @@ Specific Ways:
 #### 36. SVM
 - output SVM to probability: https://stackoverflow.com/questions/49507066/predict-probabilities-using-svm
 - optimization?
+
+#### 37. Softmax and Cross-Entropy
+Softmax is a type of activation layer which allows us to interpret the outputs as probabilities, while cross-entropy loss is what we use to measure the error at a softmax layer, and is given by[1] 
 
 # Some Resouces: 
 https://www.analyticsvidhya.com/blog/2017/04/40-questions-test-data-scientist-machine-learning-solution-skillpower-machine-learning-datafest-2017/

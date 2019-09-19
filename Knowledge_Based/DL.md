@@ -1,5 +1,5 @@
 # Neural Networks
-Regularization:
+## Regularization:
 -  dropout: randomly turn off certain parts of our network while training
     -  decide that during this epoch or this mini-batch, a bunch of neurons will be turned off
     -  assign each neuron with a probability ps at random
@@ -12,3 +12,6 @@ Regularization:
     -  generally a wd = 0.1 works pretty well
  
 1. https://becominghuman.ai/this-thing-called-weight-decay-a7cd4bcfccab
+
+## adversarial-example
+1. https://openai.com/blog/adversarial-example-research/

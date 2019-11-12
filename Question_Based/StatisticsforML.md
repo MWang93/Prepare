@@ -193,7 +193,7 @@ Gradient decent is an optimization algorithm used to minimize some fucntion by i
 [Idea](https://www.quora.com/In-classification-how-do-you-handle-an-unbalanced-training-set):
 - [Resample differently](https://elitedatascience.com/imbalanced-classes)
     - up-sample minority class
-    - down-sample majority class
+    - down-sample majority class (https://towardsdatascience.com/sampling-techniques-for-extremely-imbalanced-data-part-i-under-sampling-a8dbc3d8d6d8)
 - Try different metrics
 - Penalized Models
     - a popular algorithm is Penalized-SVM

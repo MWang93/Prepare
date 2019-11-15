@@ -24,7 +24,7 @@ Word2Vec showed that we can use a vector (a list of numbers) to properly represe
 
 Word2vec is a predictive model which learns their vectors in order to improve their predictive ability of Loss(target word | context words; Vectors), i.e. the loss of predicting the target words from the context words given the vector representations. In word2vec, this is cast as a feed-forward neural network and optimized as such using SGD, etc.
 
-![model overview](/Knowledge_Based/pictures/word2vec.png)
+![model overview](/pictures/word2vec.png)
 
 1. Example: https://towardsdatascience.com/word2vec-from-scratch-with-numpy-8786ddd49e72
 
@@ -168,10 +168,3 @@ Different Attentions
 
 ## Evaluation: BLEU(Bilingual Evaluation Understudy)
 
-BLEU compares the machine-written translation to one or several human-written translation and computes a similirity score based on:
--  n-gram precision (usually for 1,2,3,4-grams)
--  plus a penalty for too-short system translation
-
-BLEU is useful but imperfect
--  many valid way to translate a sentense
--  so a good translation can get a poor BLEU score because it has low n-gram overlap with the human translation

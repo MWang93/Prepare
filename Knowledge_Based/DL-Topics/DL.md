@@ -15,3 +15,15 @@
 
 ## adversarial-example
 1. https://openai.com/blog/adversarial-example-research/
+
+
+## GAN
+```
+How to train Discriminator
+Goal: D(r) -> 1 & D(G(f)) ->0 
+How: MIN(loss(D(r), r_label) + loss(D(G(f1), f_label))
+
+How to train Generator
+Goal: D(G(f2)) -> 1 or MAX(log(D(G(f2)))
+How: MIN(loss(D(G(f2)), r_label))
+```

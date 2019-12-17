@@ -1,13 +1,25 @@
 # Natural Language Processing (My mission is to expand each point listed here)
 
 # Recurrent Neural Networks
-    + Architectures (Limitations and inspiration behind every model) ([Blog 1](https://towardsdatascience.com/illustrated-guide-to-lstms-and-gru-s-a-step-by-step-explanation-44e9eb85bf21)) ([Blog 2](https://colah.github.io/posts/2015-08-Understanding-LSTMs/))
-	    + Vanilla
-		+ GRU
-		+ LSTM
-		+ Bidirectional
-	+ Vanishing and Exploding Gradients
+1. Architectures (Limitations and inspiration behind every model) ([Blog 1](https://towardsdatascience.com/illustrated-guide-to-lstms-and-gru-s-a-step-by-step-explanation-44e9eb85bf21)) ([Blog 2](https://colah.github.io/posts/2015-08-Understanding-LSTMs/))
+2. Vanilla RNN: 
+	- [Disadvantages][https://medium.com/learn-love-ai/the-curious-case-of-the-vanishing-exploding-gradient-bf58ec6822eb): 
+		- vanishing or exploding gradient problem
+		- forget the earlier input
+3. Identity RNN
+3. GRU
+4. LSTM: given A, .. _, use long time ago data to infer missing part.
+	- Learn Gate: combines STM + E (input) and chooses to ignore the unneeded info.
+	- Forget Gate: dump out all the unnecessary long term information. 
+	- Remember Gate = New LTM: learn gate output + forget gate output
+	- User Gate = New STM: takes the LTM from the forget gate, and STM + E from the learn gate and uses them to come up with a new short term memory or an output (same thing).
+5. Bidirectional: given A, _ , C , use A and C to infer the missing part. 
+6. ResNet
+6. Vanishing and Exploding Gradients
 # [Word Embeddings](http://hunterheidenreich.com/blog/intro-to-word-embeddings/) ([pratical cases](https://github.com/zlsdu/Word-Embedding))
+	- 简介: 
+		- 统计方法：通过统计词语之间的关系，定义一些显性隐性的关系，从而构建词向量。例如SVD，LSA等等。这样的做法在逻辑上不理性，效果上也不好。
+		- 语言模型：通过构建语言模型来实现对词向量的学习，在理论上可行的，并且目前大部分的工作就是基于这样的思想。从最开始的神经网络语言模型（NNLM）到后来的Word2vec，GloVe等等。
 1. One-Hot Encoding (Count Vectorizing): Really huge and sparse vectors that capture absolutely no relational information. 
 2. [TF-IDF Transform](https://zhuanlan.zhihu.com/p/31197209)
    - ![model overview](/pictures/TFIDF.JPG)
@@ -61,5 +73,9 @@
 4. SkipGram, NGram
 5. ELMO
 7. BERT ([Blog](http://jalammar.github.io/illustrated-bert/))
+8. VAE(Variational Autoencoders) ([Material](https://towardsdatascience.com/intuitively-understanding-variational-autoencoders-1bfe67eb5daf))
+	- What's VAE: VAEs are powerful generative models, having applications as diverse as from generating fake human faces, to producing purely synthetic music.
+	- Why VAE: When using generative models, you could simply want to generate a random, new output, that looks similar to the training data, and you can certainly do that too with VAEs. But more often, you’d like to alter, or explore variations on data you already have, and not just in a random way either, but in a desired, specific direction. This is where VAEs work better than any other method currently available.
+
 # Transformers ([Paper](https://arxiv.org/abs/1706.03762)) ([Code](https://nlp.seas.harvard.edu/2018/04/03/attention.html)) ([Blog](http://jalammar.github.io/illustrated-transformer/))
-2. Universal Sentence Encoder
+9. Universal Sentence Encoder

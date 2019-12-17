@@ -13,9 +13,7 @@
 		 + Categorical Cross Entropy
 3. Activation Functions (Sigmoid, Tanh, ReLU and variants) ([blog](https://mlfromscratch.com/activation-functions-explained/))
 4. Optimizers
-
 # Regularization(to solve overfitting, another is to get more data, which is not possible and expensive) 
-
 Idealy: An effective regularizer is said to be the one that makes a profitable trade by reducing variance significantly while not overly increasing the bias.
 
 1. Early Stopping
@@ -23,12 +21,13 @@ Idealy: An effective regularizer is said to be the one that makes a profitable t
 	- Idea: The idea of early stopping of training is that as soon as the validation error starts to increase we freeze the parameters and stop the training process. Or we can also store the copy of model parameters every time the error on the validation set improves and return these parameters when the training terminates rather than the latest parameters.
 	- Advantages: Early stopping has an advantage over weight decay that early stopping automatically determines the correct amount of regularization while weight decay requires many training experiments with different values of its hyperparameter.
 2. Noise Injection(???)
-	- Noise is often introduced to the inputs as a dataset augmentation strategy. The addition of noise with infinitesimal variance at the input of the model is equivalent to imposing a penalty on the norm of the weights. Noise injection is much more powerful than simply shrinking the parameters, especially when the noise is added to the hidden units.
+	- Noise is often introduced to the inputs as a dataset augmentation strategy. 
+	- The addition of noise with infinitesimal variance at the input of the model is equivalent to imposing a penalty on the norm of the weights. Noise injection is much more powerful than simply shrinking the parameters, especially when the noise is added to the hidden units.
 	- Another way that noise has been used in the service of regularizing models is by adding it to the weights. This technique has been used primarily in the context of recurrent neural networks. This can be interpreted as a stochastic implementation of Bayesian inference over the weights.
 3. Dataset Augmentation
 	- Used a lot in **classification problem and computer vision task**, like translating the training images a few pixels in each direction, rotating the image or scaling the image can often greatly improve generalization.
 4. Bagging or Bootstrap[Ensembling（集成学习]
-	- Idea: Train several different models separately, then have all of the models vote on the output for test examples.
+	- Idea: Train several different models separately, then have all of the models **vote on** the output for test examples.
 	- Disadvantage: cost to train modeling in NN.
 5. Parameter Norm Penalties: 
 	- Theory: It is based on limiting the capacity of models, by adding a parameter norm penalty to the objective function J.
